@@ -1,5 +1,5 @@
 import React from "react";
-import Thumb from "../Thumb";
+import Thumb from "../Thumb/Thumb.js";
 
 const Product = props => {
   const { product } = props;

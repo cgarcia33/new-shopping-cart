@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Catalog from "../Catalog";
+import Catalog from "../Catalog/Catalog.js";
 import "./App.scss";
 
 class App extends Component {

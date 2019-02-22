@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Product from "../Product";
+import Product from "../Product/Product.js";
 
 class Catalog extends Component {
   render() {
