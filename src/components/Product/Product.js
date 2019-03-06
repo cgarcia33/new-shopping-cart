@@ -1,5 +1,4 @@
 import React from "react";
-import Thumb from "../Thumb/Thumb.js";
 import { Card, Button, Icon } from "semantic-ui-react";
 import "./Product.css";
 
