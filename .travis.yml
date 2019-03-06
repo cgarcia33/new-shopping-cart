@@ -9,5 +9,6 @@ script:
 install:
   - npm install -g firebase-tools
   - npm install -g create-react-app
+  - npm install -g react-scripts
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN
