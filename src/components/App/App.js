@@ -10,6 +10,7 @@ class App extends Component {
 
     this.state = {
       products: [],
+      cartItems: [],
       signedIn: false
     };
 
@@ -48,13 +49,20 @@ class App extends Component {
     }
   }
 
+  addItem = item => {
+    console.log("adding item");
+    const currentProducts = this.state.cartItems;
+    currentProducts.push(item);
+    this.setState({ cartItems: currentProducts });
+  };
+
   render() {
     const { products } = this.state;
     return (
       <div className="App">
         <div className="auth">{this.renderAuth()}</div>
-        <Catalog products={products} />
-        <Cart />
+        <Catalog products={products} addItem={this.addItem} />
+        <Cart items={this.state.cartItems} />
       </div>
     );
   }

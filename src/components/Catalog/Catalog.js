@@ -10,7 +10,11 @@ class Catalog extends Component {
       <Grid className="catalog" columns={4}>
         {products.map(product => (
           <Grid.Column>
-            <Product product={product} key={product.id} />
+            <Product
+              product={product}
+              key={product.id}
+              addItem={this.props.addItem}
+            />
           </Grid.Column>
         ))}
       </Grid>

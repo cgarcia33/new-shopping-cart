@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Menu, Sidebar } from "semantic-ui-react";
+import { Menu, Sidebar, Image, Icon } from "semantic-ui-react";
 
 class Cart extends Component {
   state = {
@@ -18,7 +18,21 @@ class Cart extends Component {
         visible
         width="thin"
       >
+        <Icon name="shopping cart" size="large" />
         <div>Shopping Cart</div>
+        {this.props.items.map(product => (
+          <div>
+            <Image
+              src={require(`../../static/data/products/${product.sku}_1.jpg`)}
+              size="tiny"
+              centered
+            />
+            {product.title}
+            <br />
+            Price: {`$ ${product.price}`}
+            <br />
+          </div>
+        ))}
       </Sidebar>
     );
   }
