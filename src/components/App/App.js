@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Catalog from "../Catalog/Catalog.js";
+import firebase from "../../firebase.js";
 
 class App extends Component {
   constructor(props) {
