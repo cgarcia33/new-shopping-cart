@@ -51,9 +51,22 @@ class App extends Component {
 
   addItem = item => {
     console.log("adding item");
-    const currentProducts = this.state.cartItems;
-    currentProducts.push(item);
-    this.setState({ cartItems: currentProducts });
+    const currentItems = this.state.cartItems;
+    currentItems.push(item);
+    this.setState({
+      cartItems: currentItems
+    });
+  };
+
+  removeItem = item => {
+    console.log("removing item");
+    const currentItems = this.state.cartItems;
+    for (var i = 0; i < currentItems.length; i++) {
+      if (currentItems[i] === item) {
+        currentItems.splice(i, 1);
+      }
+    }
+    this.setState({ cartItems: currentItems });
   };
 
   render() {
@@ -62,7 +75,7 @@ class App extends Component {
       <div className="App">
         <div className="auth">{this.renderAuth()}</div>
         <Catalog products={products} addItem={this.addItem} />
-        <Cart items={this.state.cartItems} />
+        <Cart items={this.state.cartItems} removeItem={this.removeItem} />
       </div>
     );
   }
