@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Catalog from "../Catalog/Catalog.js";
+import Cart from "../Cart/Cart.js";
 import firebase from "../../firebase.js";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 
@@ -53,6 +54,7 @@ class App extends Component {
       <div className="App">
         <div className="auth">{this.renderAuth()}</div>
         <Catalog products={products} />
+        <Cart />
       </div>
     );
   }
